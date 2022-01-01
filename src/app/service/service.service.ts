@@ -29,6 +29,17 @@ export class ServiceService {
       });
   }
 
+  public async create(service: Service): Promise<boolean> {
+    return await this.apiClientService.post(
+      environment.api_base_url + '/api/operators/service', service, this.apiClientService.getGetAuthHeaders())
+      .then(result => {
+        return !(result === undefined || result === null);
+      })
+      .catch(_ => {
+        return false;
+      });
+  }
+
   public async getOfUser(): Promise<any> {
     return await this.apiClientService.get(environment.api_base_url + '/api/v1/users/service', this.apiClientService.getGetAuthHeaders())
       .then(result => {

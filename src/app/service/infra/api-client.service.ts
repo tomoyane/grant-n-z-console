@@ -66,7 +66,7 @@ export class ApiClientService {
   }
 
   public async post(url, body, options): Promise<any> {
-    let response: any;
+    let response: any = null;
     let index = 0;
 
     while (true) {

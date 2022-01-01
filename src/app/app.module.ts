@@ -37,6 +37,7 @@ import {GroupRoleComponent} from './component/groups/role/group-role.component';
 import {GroupPermissionComponent} from './component/groups/permission/group-permission.component';
 import {GroupService} from './service/group.service';
 import {AppService} from './service/app.service';
+import {ServiceNewComponent} from './component/services/new/service-new.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {AppService} from './service/app.service';
     GroupPolicyComponent,
     GroupRoleComponent,
     GroupPermissionComponent,
+    ServiceNewComponent,
   ],
   imports: [
     HttpClientModule,
