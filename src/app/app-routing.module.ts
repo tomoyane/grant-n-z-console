@@ -10,11 +10,20 @@ import {GroupUserComponent} from './component/groups/user/group-user.component';
 import {GroupPolicyComponent} from './component/groups/policy/group-policy.component';
 import {GroupRoleComponent} from './component/groups/role/group-role.component';
 import {GroupPermissionComponent} from './component/groups/permission/group-permission.component';
+import {ServiceNewComponent} from './component/services/new/service-new.component';
+
 
 const routes: Routes = [
   {path: '', component: LoginComponent, canActivate: [LoggingInGuard]},
+
+  // Manage service
+  {path: 'services/new', component: ServiceNewComponent, canActivate: [LoginRequireGuard]},
+
+  // Per user
   {path: 'users', component: UserIndexComponent, canActivate: [LoginRequireGuard]},
   {path: 'users/policy', component: UserPolicyComponent, canActivate: [LoginRequireGuard]},
+
+  // Per group
   {path: 'groups/:group_id', component: GroupIndexComponent, canActivate: [LoginRequireGuard]},
   {path: 'groups/:group_id/user', component: GroupUserComponent, canActivate: [LoginRequireGuard]},
   {path: 'groups/:group_id/policy', component: GroupPolicyComponent, canActivate: [LoginRequireGuard]},

@@ -54,6 +54,10 @@ export class AppComponent {
     this.load();
   }
 
+  openNewService(): void {
+    this.router.navigate(['/services/new']);
+  }
+
   openServiceDialog(): void {
     this.service.getOfUser()
       .then(result => {

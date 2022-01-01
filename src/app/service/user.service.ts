@@ -19,7 +19,7 @@ export class UserService {
 
   public async auth(body, clientSecret: string): Promise<any> {
     return this.apiClientService.post(
-      environment.api_base_url + '/api/v1/token', body, this.apiClientService.getPostNoAuthHeaders(clientSecret))
+      environment.api_base_url + '/api/v1/token?type=operator', body, this.apiClientService.getPostNoAuthHeaders(clientSecret))
       .then(result => {
         const response = JSON.parse(JSON.stringify(result));
         this.localStorageService.setAuthCookie(response.token);
